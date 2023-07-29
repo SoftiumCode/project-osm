@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import './index.scss';
 
 const App = () => {
-    
-    //
 
     const someOtherUrl = import.meta.env['VITE_DISCORD_WEBHOOK_URL'];
 
