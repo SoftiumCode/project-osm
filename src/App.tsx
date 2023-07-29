@@ -1,28 +1,25 @@
-import React from 'react';
-// import Config from './utils/configuration'
-import dot from 'dotenv';
+import React, { useState } from 'react';
 import './index.scss';
 
 const App = () => {
     
-    const appname = import.meta.env['VITE_APP_NAME'];
+    const someOtherUrl = import.meta.env['VITE_DISCORD_WEBHOOK_URL'];
 
-    // const request = new XMLHttpRequest();
-    // request.open('POST', 'https://discord.com/api/webhooks/1134847797250768977/hSgqdNhVc9UbRu42Ap7sZwkfsz2AOXbg51kTF9F5uVlWIIsv5PuyWdMaZ1lHtt9UVmBl');
-    // request.setRequestHeader('Content-type', 'application/json');
-    const params = {
-        username: "софти",
-        avatar_url: "",
-        content: "Это ещё одна хуйня которую я отправил со своего сайта для теста"
-    }
-    
+    const nameFieldId = React.useId();
+    const contentFieldId = React.useId();
 
-    // function buttonHandler() {
-    //     request.send(JSON.stringify(params));
-    // }
+    const [nameFieldValue, setNameFieldValue] = useState('');
+    const [contentFieldValue, setContentFieldValue] = useState('');
 
     function buttonHandler2() {
-        return fetch('https://discord.com/api/webhooks/1134847797250768977/hSgqdNhVc9UbRu42Ap7sZwkfsz2AOXbg51kTF9F5uVlWIIsv5PuyWdMaZ1lHtt9UVmBl', {
+
+        const params = {
+            username: nameFieldValue,
+            avatar_url: "",
+            content: contentFieldValue
+        }
+
+        return fetch(someOtherUrl, {
             method: 'POST',
             body: JSON.stringify(params),
             headers: {
@@ -33,8 +30,9 @@ const App = () => {
 
     return (
         <>
+            <input id={nameFieldId} type='text' placeholder='Ваше имя' value = {nameFieldValue} onInput = {e => setNameFieldValue((e.target as HTMLInputElement).value)}></input>
+            <input id={contentFieldId} type='text' placeholder='Ваше текст' value = {contentFieldValue} onInput = {e => setContentFieldValue((e.target as HTMLInputElement).value)}></input>
             <button onClick={buttonHandler2}>Тыкни на меня</button>
-            <div>{appname}</div>
         </>
         
     )
