@@ -1,3 +1,5 @@
+@use 'src/utils/variables.scss';
+
 .header {
     position: fixed;
     width: 100%;
@@ -32,7 +34,7 @@
         }
 
         .header-nav-button {
-            background-color: black;
+            background-color: variables.$main-color;
             padding: .75rem 2rem;
             color: white;
             border-radius: .75rem;
