@@ -1,3 +1,5 @@
+@use 'src/utils/variables.scss';
+
 @font-face {
 	font-family: 'Cuprum';
 	src: url(/fonts/Cuprum.ttf) format('truetype');
@@ -16,6 +18,7 @@
         background: none;
         cursor: pointer;
         text-transform: uppercase;
+        background-color: variables.$second-color;
     }
 
     a {
@@ -24,7 +27,7 @@
     }
 
     body {
-        background-color: #523f3b;
+        background-color: variables.$main-color;
     }
 
 }
@@ -39,7 +42,7 @@
 }
 
 ::-webkit-scrollbar-track {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 ::-webkit-scrollbar-thumb {
