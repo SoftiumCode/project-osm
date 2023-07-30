@@ -1,3 +1,52 @@
+@font-face {
+	font-family: 'Cuprum';
+	src: url(/fonts/Cuprum.ttf) format('truetype');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Cuprum';
+
+    button {
+        font-size: 16pt;
+        outline: none;
+        border: none;
+        background: none;
+        cursor: pointer;
+        text-transform: uppercase;
+    }
+
+    a {
+        text-decoration: 0;
+        color: #000;
+    }
+
+    body {
+        background-color: #523f3b;
+    }
+
+}
+
 :root {
-    
+    font-size: 12pt;
+}
+
+::-webkit-scrollbar {
+    position: relative;
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
 }
