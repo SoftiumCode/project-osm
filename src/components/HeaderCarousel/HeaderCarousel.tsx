@@ -3,9 +3,12 @@ import './HeaderCarousel.scss';
 
 const HeaderCarousel = () => {
   return (
-    <div className='header_carousel'>
-        <p>THE ADVENTURER</p>
-    </div>
+    <section className='header_carousel'>
+      <div className='content'>
+        <h2>THE ADVENTURER</h2>
+        <p><a href='/'>Бла-бла-бла-бла-бла</a></p>
+      </div>
+    </section>
   )
 }
 

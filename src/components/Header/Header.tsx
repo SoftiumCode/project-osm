@@ -16,7 +16,10 @@ const Header = () => {
   return (
     <header className={transparent ? 'header' : 'header header-untransparent'}>
         <nav className='header-nav'>
-          <div className='header-logo'>Logo</div>
+          <div className='header-logo'>
+            <img src='vite.svg' alt="The Adventurer"></img>
+            <a href='/'>The Adventurer</a>
+          </div>
           <div className='header-nav-list'>
             <a className='header-nav-item' href='#'>О нас</a>
             <button className='header-nav-button'>Присоединиться</button>
