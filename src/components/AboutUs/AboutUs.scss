@@ -1,13 +1,53 @@
+@use 'src/utils/variables.scss';
+
 .about-us {
 
-    padding: 128px;
+    padding: 0 128px;
     width: 100%;
 
     .container {
-        border-radius: .5rem;
-        background-color: #DCDCDC;
+        display: grid;
+        grid-template-columns: repeat( 2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+            "Block1 Block3"
+            "Block2 Block3";
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
         padding: 64px;
-        box-shadow: 0rem 0rem 4rem rgba(0, 0, 0, 0.5);
+
+        .about-us-card {
+            height: 100%;
+            padding: 1rem;
+            gap: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: variables.$second-color;
+            border-radius: 1rem;
+
+            transition: .1s ease-out;
+
+            &:hover {
+                transform: scale(1.025, 1.025);
+            }
+        }
+
+        #card-1 {
+            grid-area: Block1;
+        }
+
+        #card-2 {
+            grid-area: Block2;
+        }
+
+        #card-3 {
+            background: url('./test.jpeg') center center no-repeat;
+            background-size: cover;
+            grid-area: Block3;
+        }
 
         h2 {
             font-size: 64pt;
@@ -15,7 +55,7 @@
         }
 
         p {
-            font-size: 24pt;
+            font-size: 24px;
             text-align: justify;
         }
     }
@@ -23,10 +63,24 @@
 
 @media (max-width: 1000px) {
     .about-us {
+        width: 100vw;
         padding: 24px;
 
         .container {
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas: 
+            "Block1"
+            "Block2"
+            "Block3";
             padding: 12px;
+
+            .about-us-card {
+
+            }
 
             p {
                 font-size: 14pt;
